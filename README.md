@@ -66,3 +66,13 @@ Feel free to explore and modify the configuration files to suit your needs:
 - `~/.p10k.zsh`: Powerlevel10k theme configuration
 
 Create private configs using naming convention: `*.private.zsh`. This won't be tracked by Git.
+
+Note: If you find the theme not working as expected, try:
+1. Remove the existing `.p10k.zsh` file:
+    ```bash
+    cd ~/dotfiles
+    rm -rf .p10k.zsh
+    stow --adopt .
+    ```
+
+2. Start a new terminal session and you'll now be prompted to configure Powerlevel10k through a setup wizard. Follow the prompts to customize the theme to your liking.
