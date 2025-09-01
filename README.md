@@ -24,18 +24,28 @@ These packages will be installed automatically through the setup process:
 
 1. Clone this repository to your home directory:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/dotfiles.git ~/dotfiles
+   git clone https://github.com/frstycodes/dotfiles.git ~/dotfiles
    ```
 
 2. Use GNU Stow to create symbolic links:
    ```bash
    cd ~/dotfiles
+
+   # Initialize your own Git repository
+   rm -rf .git
+   git init
+   git commit -a -m "Initial setup of my awesome dotfiles ✨"
+
+   # Backup your existing ZSH Config
+   mv ~/.zshrc ~/.zshrc.bak
+
+   # Create symlinks using GNU Stow
    stow --adopt .
    ```
 
-   The `--adopt` flag will automatically handle any conflicts for existing files in your dotfiles repository.
+   The `--adopt` flag will automatically handle any conflicts for conflicting files in your dotfiles directory.
 
-3. Start a new terminal session.
+3. Start a new terminal session and verify if the ZSH config is working correctly.
 
 ## Features
 
