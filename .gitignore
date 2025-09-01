@@ -1,0 +1,15 @@
+# Ignore private configurations
+*.private.zsh
+*.private
+*.local
+*.work
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo

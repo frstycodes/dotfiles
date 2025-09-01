@@ -1,0 +1,45 @@
+# Autocorrects 1 char typos in git commands like 'git comit' -> 'git commit'
+[help]
+    autocorrect = 1
+
+[alias]
+
+    a = add
+    aa = add .
+    rma = remote add
+    br = branch
+    cm = commit
+    cp = cherry-pick
+    rb = rebase
+    sa = stash apply
+    sd = stash drop
+    sl = stash list
+    st = status
+    po = push -u origin HEAD
+    graph1 = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+    graph2 = log --graph --full-history --all --color --pretty=tformat:"%C(red)%h%C(reset)%x09%C(green)%d%C(reset)%C(bold)%s%C(reset)%C(yellow)(%an)%C(reset)"
+    ll = log --pretty=format:'%Cred%h %Creset%<(67,trunc)%s %Cblue[%cn]%C(Yellow)%d'
+
+    co = switch # switch to branch
+    con = switch -c # create and swtich to new branch
+    col = switch - # switch to last branch
+    pushf = push --force-with-lease # force push but only if remote branch is same as local branch
+    lll = log --stat --abbrev-commit # show commit stats
+    cloc = !cloc $(git ls-files) # count lines of code
+    rbc = rebase --continue # continue rebase after conflict resolution
+    ss = stash push -um # stash staged changes
+
+    undo = reset HEAD~1 --mixed # UNDO LAST COMMIT
+    undo-hard = reset HEAD~1 --hard # UNDO LAST COMMIT AND DISCARD CHANGES
+
+[commit]
+    gpgsign = true
+
+[push]
+    default = simple
+
+[pull]
+    rebase = true
+
+[init]
+    defaultBranch = main

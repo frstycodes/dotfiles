@@ -1,0 +1,107 @@
+/*
+ZED KEYMAP
+
+For information on binding keys, see the Zed
+documentation: https://zed.dev/docs/key-bindings
+
+To see the default key bindings run `zed: open default keymap`
+from the command palette.
+*/
+
+[
+  {
+    "bindings": {
+      "ctrl-p": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "capslock": ["workspace::SendKeystrokes", "escape"],
+      "cmd-`": "workspace::NewTerminal" // New Terminal
+    }
+  },
+  {
+    "context": "vim_mode==insert",
+    "bindings": {
+      "cmd-h": ["workspace::SendKeystrokes", "left"],
+      "cmd-l": ["workspace::SendKeystrokes", "right"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode==visual",
+    "bindings": {
+      "t l": ["workspace::SendKeystrokes", "y o console.log() escape h p"]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-m": "editor::ToggleMinimap",
+      "alt-r": ["buffer_search::Deploy", { "replace_enabled": true }], // Find and replace
+
+      "alt-k": "editor::MoveLineUp", // Move line up
+      "alt-j": "editor::MoveLineDown", // Move line dowsplitr
+
+      "cmd-shift-l": [
+        "workspace::SendKeystrokes",
+        "cmd-shift-p splitr enter ctrl-h ctrl-h cmd-w ctrl-l"
+      ], // Split pane right
+      "cmd-shift-j": [
+        "workspace::SendKeystrokes",
+        "cmd-shift-p shiftr enter ctrl-k ctrl-k cmd-w ctrl-j"
+      ], // Split pane
+
+      "cmd-.": "editor::ToggleCodeActions", // Open
+      "alt-e": "editor::GoToDiagnostic",
+      "alt-shift-e": "editor::GoToPreviousDiagnostic",
+
+      "cmd-i": "assistant::InlineAssist",
+      "cmd-enter": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-w": ["workspace::SendKeystrokes", "ctrl-shift-p tabclose enter"]
+    }
+  },
+  {
+    "context": "vim_mode==normal",
+    "bindings": {
+      "tab": ["workspace::SendKeystrokes", ": tabnext enter"],
+      "shift-tab": ["workspace::SendKeystrokes", ": tabprev enter"],
+      "space a": "editor::SelectAll",
+
+      "shift-h": ["workspace::SendKeystrokes", "^"],
+      "shift-l": ["workspace::SendKeystrokes", "$"],
+
+      "space t h": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "left" }
+      ],
+      "space t l": "workspace::SwapPaneRight",
+      "space t k": "workspace::SwapPaneUp",
+      "space t j": "workspace::SwapPaneDown",
+
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+
+      "ctrl-alt-h": "vim::ResizePaneLeft",
+      "ctrl-alt-l": "vim::ResizePaneRight",
+      "ctrl-alt-j": "vim::ResizePaneDown",
+      "ctrl-alt-k": "vim::ResizePaneUp",
+
+      "shift-v shift-v": ["workspace::SendKeystrokes", "v a { shift-v"], // Select a function
+      "shift-y shift-y": ["workspace::SendKeystrokes", "shift-v shift-v y"] // Copy a function
+    }
+  },
+  {
+    "context": "Editor && vim_mode==visual && !VimWaiting && !VimObject",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds"
+    }
+  }
+]

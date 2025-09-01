@@ -1,0 +1,254 @@
+/*
+ Zed settings
+
+ For information on how to configure Zed, see the Zed
+ documentation: https://zed.dev/docs/configuring-zed
+
+ To see all of Zed's default settings without changing your
+ custom settings, run `zed: open default settings` from the
+*/
+
+{
+  // FONT //////////////
+
+  "ssh_connections": [],
+  "icon_theme": "Symbols Icon Theme",
+  "ui_font_family": ".SystemUIFont",
+  "ui_font_weight": 500,
+  "ui_font_size": 14,
+  "buffer_font_size": 13,
+  "buffer_font_family": "MonoLisa",
+  "buffer_line_height": {
+    "custom": 2.4
+  },
+
+  // AGENT ///////////////////
+  "agent": {
+    // "commit_message_model": { "provider": "copilot_chat",
+    //   "model": "claude-3.7-sonnet"
+    // },
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet"
+    },
+    "play_sound_when_agent_done": true,
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
+    "profiles": {
+      "ask": {
+        "name": "Ask",
+        "tools": {
+          "open": true,
+          "diagnostics": true,
+          "fetch": true,
+          "list_directory": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "grep": true,
+          "thinking": true,
+          "delete_path": false
+        },
+        "enable_all_context_servers": true
+      },
+      "write": {
+        "context_servers": {
+          "Github MCP": {
+            "tools": {
+              "fork_repository": true,
+              "get_code_scanning_alert": true,
+              "get_commit": true,
+              "get_file_contents": true,
+              "get_issue": true,
+              "get_issue_comments": true,
+              "get_me": true,
+              "get_pull_request_comments": true,
+              "get_pull_request": true,
+              "get_pull_request_files": true,
+              "get_pull_request_reviews": true,
+              "get_pull_request_status": true,
+              "get_secret_scanning_alert": true,
+              "list_branches": true,
+              "list_code_scanning_alerts": true,
+              "list_commits": true,
+              "list_issues": true,
+              "list_pull_requests": true,
+              "list_secret_scanning_alerts": true,
+              "merge_pull_request": true,
+              "push_files": true,
+              "search_code": true,
+              "search_issues": true,
+              "search_repositories": true,
+              "search_users": true,
+              "update_issue": true,
+              "update_pull_request": true,
+              "update_pull_request_branch": true,
+              "create_repository": true,
+              "create_pull_request_review": true,
+              "create_pull_request": true,
+              "create_or_update_file": true,
+              "create_issue": true,
+              "create_branch": true,
+              "add_pull_request_review_comment": true,
+              "add_issue_comment": true
+            }
+          }
+        },
+        "name": "Write",
+        "tools": {
+          "rename": true,
+          "contents": true,
+          "code_actions": true,
+          "open": true,
+          "create_directory": true,
+          "terminal": true,
+          "batch_tool": true,
+          "code_symbols": true,
+          "copy_path": true,
+          "create_file": true,
+          "delete_path": false,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "grep": true,
+          "symbol_info": true,
+          "thinking": true
+        },
+        "enable_all_context_servers": true
+      }
+    },
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet"
+    }
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+
+  "bottom_dock_layout": "full",
+
+  "vim_mode": true,
+  "jsx_tag_auto_close": {
+    "enabled": true
+  },
+  "calls": {
+    "mute_on_join": true
+  },
+  "vim": {
+    "cursor_shape": {
+      "visual": "hollow"
+    },
+    // "use_system_clipboard": "",
+    "highlight_on_yank_duration": 50,
+    "use_smartcase_find": true
+  },
+
+  "vertical_scroll_margin": 10,
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "show_diagnostics": "all"
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
+  },
+  "horizontal_scroll_margin": 10,
+  "image_viewer": {
+    "unit": "decimal"
+  },
+
+  "linked_edits": true, // Auto rename Tags
+  "restore_on_startup": "last_session",
+  "relative_line_numbers": true,
+
+  "show_whitespaces": "selection",
+
+  // APPEARANCE ///////////////////////
+  "theme": {
+    "mode": "system",
+    "light": "Everforest Dark",
+    "dark": "Everforest Dark"
+  },
+
+  "experimental.theme_overrides": {
+    "scrollbar.thumb.background": "#292929",
+    "editor.subheader.background": "#111314",
+    "element.disabled": "#292929",
+    "ghost_element.hover": "#242424",
+    "ghost_element.disabled": "#000000",
+
+    "scrollbar.thumb.border": "#00000000",
+    "border": "#24242400",
+
+    "predictive": "#5d6a70",
+
+    // Accent Color
+    "element.selection_background": "#d2b47910",
+    "icon.accent": "#d2b479",
+    "ghost_element.selected": "#d2b47910",
+    "text.accent": "#d2b479",
+    "players": [{ "selection": "#d2b47910" }],
+    "drop_target.background": "#d2b47910",
+    "ghost_element.active": "#d2b479",
+    "panel.focused_border": "#d2b479",
+    "editor.active_line_number": "#d2b479",
+
+    // Text
+    // "text.muted": "#ffffee20",
+    "text": "#d0cebf",
+    "text.muted": "#d0cebf80",
+    "editor.indent_guide_active": "#d0cebf10",
+    "editor.document_highlight.read_background": "#d0cebf10",
+    "editor.document_highlight.write_background": "#d0cebf10",
+    "editor.document_highlight.bracket_background": "#d0cebf10",
+    "editor.indent_guide": "#d0cebf01",
+    "panel.indent_guide": "#d0cebf02",
+    "panel.indent_guide_active": "#d0cebf12",
+    "editor.active_line.background": "#d0cebf02",
+    "editor.highlighted_line.background": "#d0cebf04",
+    "element.selected": "#d0cebf04",
+    "tab.active_background": "#d0cebf04",
+    "border.variant": "#d0cebf02",
+
+    // Background
+
+    // "background": "#1f1f1f",
+    // "background": "#1e2224",
+    "background": "#1e2324",
+    "editor.background": "#1e2324",
+    "status_bar.background": "#1e2324",
+    "editor.gutter.background": "#1e2324",
+    "hint.background": "#1e2324",
+    "terminal.background": "#1e2324",
+    "terminal.ansi.background": "#1e2324",
+    "tab.inactive_background": "#1e2324",
+    "tab_bar.background": "#1e2324",
+    "unreachable.background": "#1e2324",
+    "element.background": "#1e2324",
+    "ghost_element.background": "#1e2324",
+    "toolbar.background": "#1e2324",
+
+    // Background Darker
+    "scrollbar.track.background": "#191919",
+    "elevated_surface.background": "#191919",
+    "element.hover": "#191919",
+
+    // Background Darkest
+    // "panel.background": "#171a1c",
+    "panel.background": "#171c1c",
+    "surface.background": "#171c1c",
+    "title_bar.background": "#171c1c",
+
+    // GIT
+    "modified": "#5d8caa",
+    "created": "#589380",
+    "warning": "#ab766e"
+  }
+}
