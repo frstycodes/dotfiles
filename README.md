@@ -67,7 +67,7 @@ Feel free to explore and modify the configuration files to suit your needs:
 
 Create private configs using naming convention: `*.private.zsh`. This won't be tracked by Git.
 
-Note: If you find the theme not working as expected, try:
+Note: If you find the theme not working as expected, follow these steps:
 1. Remove the existing `.p10k.zsh` file:
     ```bash
     cd ~/dotfiles
